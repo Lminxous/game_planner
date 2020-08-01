@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w-(sn-a&s8wq8e6wbk^xmc0@=nr1@u*#u0t10oom@u5t7x7g-v'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -134,42 +134,3 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-# ---- CORS ----
-CORS_ORIGIN_ALLOW_ALL = True
-
-#-----LOGGING-----
-
-INFOPATH = os.path.join(BASE_DIR, "main/logs/INFO.log")
-DEBUGPATH = os.path.join(BASE_DIR, "main/logs/DEBUG.log")
-LOGGING = {
-    'version':1,
-    'disable_existing_loggers':False, # to keep the Django logging system
-    'formatters':{
-        'default': {
-            'format':'TIME: %(asctime)s\nLEVEL: %(levelname)s\nMESSAGE: %(message)s\n'
-        }
-    },
-    'handlers':{
-        'info':{
-            'level':'INFO',
-            'formatter':'default',
-            'class':'logging.FileHandler',
-            'filename':INFOPATH
-        },
-        'debug':{
-            'level':'DEBUG',
-            'formatter':'default',
-            'class':'logging.FileHandler',
-            'filename':DEBUGPATH,
-            'mode':'w'
-        }
-        # until and unless someone adds some debug messages, the two will be the same.
-    },
-    'loggers':{
-        'viewlog':{
-            'level':'DEBUG',
-            'handlers':['info','debug'],
-            'propagate':True
-        }
-    }
-}

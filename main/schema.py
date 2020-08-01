@@ -83,7 +83,6 @@ class CreateListing(graphene.Mutation):
             potential_groups.reverse()     
             print(potential_groups)       
 
-            overlap_ranges = []
             for group in potential_groups:
                 # Adding listing in half filled group with max overlap   
                 group_range = (group[1].start, group[1].end)
@@ -101,7 +100,7 @@ class CreateListing(graphene.Mutation):
                     listing.save()
                     break   
             
-            # If there is no overlap with the previous half filled groups of specified game
+            # If there is no overlap with any previous half filled groups of specified game
             if potential_groups[0][0] == 0:
                     group = models.Group(game=game,start=start,end=end)
                     group.save()
