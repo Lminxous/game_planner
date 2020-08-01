@@ -3,6 +3,23 @@
  A portal that makes efficient squads of people trying to play games like Valorant,CounterStrike,PUBG,etc.
  
 
+## The Backend
+The backend server (ie this repo) is split up in the following components: 
+
+- A Django+GraphQL webapp
+- A SQLite Database for primary data storage
+
+## Setting up the Server
+ The following steps should help you set up the server:
+ 
+  1. `git clone https://github.com/lminxous/game_planner`
+ 
+  2. `cd game_planner`
+  
+  3. `pip3 install -r requirements.txt`
+  
+  4. `python manage.py runserver`
+  
 ## Explanation of Models
 A player must create a Listing for the game he wants to play with attributes:
 
@@ -32,23 +49,6 @@ The above makes a squad containing maximum 4 members.
 
 The server automatically adds a listing into an existing squad or creates a new squad when a new listing is created. 
 A listing once created cannot be and _should not_ be changed. 
-
-## The Backend
-The backend server (ie this repo) is split up in the following components: 
-
-- A Django+GraphQL webapp
-- A SQLite Database for primary data storage
-
-## Setting up the Server
- The following steps should help you set up the server:
- 
-  1. `git clone https://github.com/lminxous/game_planner`
- 
-  2. `cd game_planner`
-  
-  3. `pip3 install -r requirements.txt`
-  
-  4. `python manage.py runserver`
  
 ## The Algorithm
   
