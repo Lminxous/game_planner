@@ -33,6 +33,12 @@ The above makes a squad containing maximum 4 members.
 The server automatically adds a listing into an existing squad or creates a new squad when a new listing is created. 
 A listing once created cannot be and _should not_ be changed. 
 
+## The Backend
+The backend server (ie this repo) is split up in the following components: 
+
+- A Django+GraphQL webapp
+- A SQLite Database for primary data storage
+
 ## Setting up the Server
  The following steps should help you set up the server:
  
