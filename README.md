@@ -10,7 +10,7 @@ A player must create a Listing for the game he wants to play with attributes:
     start
     end
 
-Here, start & end denote the start and end of the waiting period of the user in isoformat.
+Here, start & end denote the waiting period of the user in isoformat.
 
 In words:
 
