@@ -13,7 +13,7 @@ GAME_CHOICES = (
 )
 
 class Listing(models.Model):
-    organiser = models.ForeignKey(User, related_name="listings", on_delete=models.CASCADE)
+    player = models.ForeignKey(User, related_name="listings", on_delete=models.CASCADE)
     group = models.ForeignKey(
         "Group", related_name="members", on_delete=models.CASCADE, null=True, blank=True
     )
@@ -28,7 +28,7 @@ class Listing(models.Model):
             group_info = self.group.pk
         return {
             "pk": self.pk,
-            "organiser": self.organiser.pk,
+            "player": self.player.pk,
             "group": group_info,
             "game": self.game,
             "start": self.start.isoformat(),
@@ -36,7 +36,7 @@ class Listing(models.Model):
         }
 
     def __str__(self):
-        return f"Listing({self.organiser}, {self.game})"
+        return f"Listing({self.player}, {self.game})"
 
 class GroupManager(models.Manager):
     def groups_by_game(self, game):

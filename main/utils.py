@@ -2,8 +2,8 @@ import datetime
 from django.core.validators import ValidationError
 
 
-def find_num_hours(dt_range):
-    return (dt_range[1] - dt_range[0]).seconds // 3600
+def find_num_mins(dt_range):
+    return (dt_range[1] - dt_range[0]).seconds // 60
 
 
 def find_overlap_range(range1, range2):
@@ -38,11 +38,11 @@ def find_overlap_range(range1, range2):
         return start1, end2
 
 
-def find_num_hours_in_overlap(range1, range2):
+def find_num_mins_in_overlap(range1, range2):
     overlap_range = find_overlap_range(range1, range2)
     if overlap_range == None:
         return 0
-    return find_num_hours(overlap_range)
+    return find_num_mins(overlap_range)
 
 
 def find_max_overlap_range(range1, list_of_ranges):
