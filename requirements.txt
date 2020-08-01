@@ -86,7 +86,7 @@ python-dotenv==0.14.0
 python-http-client==3.2.7
 python3-openid==3.2.0
 pytz==2020.1
-PyYAML==3.13
+pyyaml>=4.2b1
 pyzmail36==1.0.4
 redis==3.5.3
 requests==2.23.0
