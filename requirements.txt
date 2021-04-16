@@ -22,7 +22,7 @@ django-allauth==0.42.0
 django-cors-headers==3.2.1
 django-crispy-forms==1.9.1
 django-cursor-pagination==0.1.4
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 django-elasticsearch-dsl==6.4.1
 django-environ==0.4.5
 django-excel==0.0.10
